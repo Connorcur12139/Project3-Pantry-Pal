@@ -1,7 +1,7 @@
 #include "AVL.h"
 using namespace std;
 
-void AVLTree::breadthFirstSearch(const vector<string>& targetIngredients)
+Node* AVLTree::breadthFirstSearch(const vector<string>& targetIngredients)
 {
 	queue<Node*> q;
 	Node* foundRecipe = nullptr;
@@ -40,10 +40,11 @@ void AVLTree::breadthFirstSearch(const vector<string>& targetIngredients)
 		cout << foundRecipe->ingredients[i] << endl;
 	}
 	cout << "Matches: " << ingredient_matches << endl;
+	return foundRecipe;
 }
 
 
-void AVLTree::depthFirstSearch(const vector<string>& targetIngredients) {
+Node* AVLTree::depthFirstSearch(const vector<string>& targetIngredients) {
 	stack<Node*> stk;
 	stk.push(root);
 	Node* foundRecipe = nullptr;
@@ -79,7 +80,7 @@ void AVLTree::depthFirstSearch(const vector<string>& targetIngredients) {
 		cout << foundRecipe->ingredients[i] << endl;
 	}
 	cout <<"Matches: "<<  ingredient_matches << endl;
-
+	return foundRecipe;
 }
 
 
@@ -320,7 +321,7 @@ void AVLTree::searchName(string name) {
 void AVLTree::searchNameHelper(Node* node, string name, bool& found) {
 	//If the student name was found, print the associated ID.
 	//If the tree has more than one object with the same NAME, print each ID on a new line with no other spacesand in the same relative order as a pre - order traversal.
-	//If the name does not exist within the tree, print “unsuccessful”.
+	//If the name does not exist within the tree, print Â“unsuccessfulÂ”.
 	if (node != nullptr) {
 		if (node->name == name) {
 			cout << node->id << endl;
@@ -341,7 +342,7 @@ void AVLTree::searchId(int id) {
 
 void AVLTree::searchIdHelper(Node* node, int id) {
 	// If the ID was found, print out their NAME.
-	// If the ID does not exist within the tree, print “unsuccessful”.
+	// If the ID does not exist within the tree, print Â“unsuccessfulÂ”.
 	if (node == nullptr) {
 		cout << "unsuccessful" << endl;  // Tree is empty
 		return;
