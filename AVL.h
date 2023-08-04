@@ -68,8 +68,8 @@ public:
 	Node* root;
 
 
-	void breadthFirstSearch(const vector<string>& targetIngredients);
-	void depthFirstSearch(const vector<string>& targetIngredients);
+	Node* breadthFirstSearch(const vector<string>& targetIngredients);
+	Node* depthFirstSearch(const vector<string>& targetIngredients);
 	//void depthFirstSearchInOrderHelper(Node* node);
 
 	void insert(int id, string name, string description, vector<string> ingredients, int size_ingredients, vector<string> ingredients_amount, string serving_size, string servings, string steps);
