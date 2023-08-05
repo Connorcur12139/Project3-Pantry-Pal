@@ -38,7 +38,6 @@ struct Node {
 
 class AVLTree {
 private:
-	int count = 0;
 	int height(Node* node);
 	int balance(Node* node);
 	Node* rotateLeft(Node* node);
@@ -51,15 +50,6 @@ private:
 
 
 	
-	
-	Node* removeIdHelper(Node* node, int id);
-	Node* removeInorderNHelper(Node*& node, int n, int& count, bool& success);
-	void searchNameHelper(Node* node, string name, bool& found);
-	void searchIdHelper(Node* node, int id);
-	void printInorderHelper(Node* node);
-	void printPreorderHelper(Node* node, vector<string>& names);
-	void printPostorderHelper(Node* node, vector<string>& names);
-
 
 
 
@@ -73,14 +63,6 @@ public:
 	//void depthFirstSearchInOrderHelper(Node* node);
 
 	void insert(int id, string name, string description, vector<string> ingredients, int size_ingredients, vector<string> ingredients_amount, string serving_size, string servings, string steps);
-	void removeId(int id);
-	void removeInorderN(int n);
-	void searchName(string name);
-	void searchId(int id);
-	void printInorder();
-	void printPreorder();
-	void printPostorder();
-	void printLevelCount();
 	AVLTree() : root() {}  // ?
 };
 
