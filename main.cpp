@@ -36,18 +36,12 @@ int main(int argc, char *argv[])
     AVLTree tree;
     RecipeManager recipeManager;
     vector<string> searchList;
-    //string file = "recipes_w_search_terms_edit.csv";
+
     QString currentDir = QDir::currentPath();
     QString filePath = currentDir + "/Recipes.csv";
 
     recipeManager.ReadFromCSVFile(tree, filePath.toStdString(), searchList);
 
-
-    //vector<string> search{"water", "onion", "red bell pepper", "butter", "salt"};
-    //tree.printInorder();
-
-    //tree.breadthFirstSearch(search);
-    //tree.depthFirstSearch(search);
 
 
 
